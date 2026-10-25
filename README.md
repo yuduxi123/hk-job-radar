@@ -1,5 +1,7 @@
 # 香港求职助手 · hk-job-radar
 
+[项目导航](https://github.com/yuduxi123) · [来源与致谢](ATTRIBUTION.md)
+
 支持 Codex 的香港岗位搜索、资格核验、简历匹配及去重跟踪。**默认不需要 DeepSeek API Key**。这是独立的 Skill 封装，不是 [prui0474/hk-job-radar](https://github.com/prui0474/hk-job-radar) 抓取程序本体，也不捆绑其源码。
 
 ## 安装与使用
