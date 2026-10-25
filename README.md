@@ -40,3 +40,15 @@ python3 -m unittest discover -s tests -v
 真实简历、画像、浏览器会话、凭据和申请日志放在独立私有工作台。不要提交到技能仓库。支持助手准备申请，只有明确授权的具体操作才能执行；最终状态以官方回执为准。
 
 [开源调研](references/oss-review.md) · [MIT](LICENSE)
+
+## 可选：使用其他模型 API 评分
+
+保留默认Codex模式，新增可配置的OpenAI Chat Completions兼容接口。可填写服务地址、模型名，并在本机终端隐藏输入API Key；无需额外Python依赖。支持环境变量或权限600的独立Key文件，真实Key不写仓库。
+
+```bash
+python3 scripts/model_score.py configure --config ~/.config/career-assistant/model-config.json --base-url https://api.deepseek.com --model YOUR_AVAILABLE_MODEL --prompt-key
+```
+
+将模型名替换为服务商实际可用模型。默认评分命令只预览，明确添加 `--send` 才传输所选画像/JD并产生可能的API费用。模型输出0–100匹配分，硬门槛未知最多B/79分，明确不符最多C/59分；分数不是录用概率。接口兼容不等于已经实测所有厂商，原生Anthropic Messages等不同协议不直接支持。
+
+详见[配置、输入格式与调用说明](references/api-model.md)。未提供真实Key，本次仅进行离线协议与安全行为测试；不会自动修改已配置的每日任务。

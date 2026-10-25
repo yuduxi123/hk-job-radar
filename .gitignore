@@ -14,3 +14,9 @@ resumes/
 *.docx
 *.bak*
 .venv/
+
+# Optional model credentials and private inputs
+*.key
+model-config*.json
+model-input*.json
+model-score*.json
